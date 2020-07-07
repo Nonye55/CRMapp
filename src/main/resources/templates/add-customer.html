@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Add-Customer</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+   <body>
+   <div class="container my-5">  
+        <div class="card "> 
+            <div class="card-header text-center">
+            		<h2> Add Customer</h2>
+            	 </div>
+            	 <div class="card-body">
+            	 
+                <div class="col-md-8">
+                    <form action="#" th:action="@{/customer/addnew}" th:object="${customer}" method="post">
+                        <div class="row">
+                        	<div class="input-group">
+                           		<div class="input-group-prepend">
+                           			<span class="input-group-text">FirstName</span>
+                           		</div>
+                               <input type="text" th:field="*{firstName}" class="form-control" id="firstName" placeholder="firstName"required>
+								<span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="text-danger"></span>
+
+                           	</div>
+                           	
+                 			<div class="input-group">
+                           		<div class="input-group-prepend">
+                           			<span class="input-group-text">LastName</span>
+                           		</div>
+         						 <input type="text" th:field="*{lastName}" class="form-control" id="lastName" placeholder="LastName"required>
+         						 <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="text-danger"></span>
+                           	</div>
+                 
+                           	<div class="input-group">
+                           		<div class="input-group-prepend">
+                           			<span class="input-group-text">Phone Number</span>
+                           		</div>
+                           		     <input type="text" th:field="*{phoneNumber}" class="form-control" id="phoneNumber" placeholder="PhoneNumber"required>
+                           		       <span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" class="text-danger"></span>
+                            </div>
+                            
+                             <div class="input-group">
+                           		 <div class="input-group-prepend">
+                           		 <span class="input-group-text">Email</span>
+                           		 </div>
+                                 <input type="text" th:field="*{email}" class="form-control" id="email" placeholder="Email"required>
+                                 <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
+                            </div>
+                            
+<!--                             <div class="input-group">-->
+<!--                           		<div class="input-group-prepend">-->
+<!--                           				<span class="input-group-text">Password</span>-->
+<!--                           		  </div>-->
+<!--                           		     <input type="text" th:field="*{password}" class="form-control" id="password" placeholder="Password">-->
+<!--&lt;!&ndash;											&ndash;&gt;<small id="passwordHelpBlock" class="form-text text-muted">-->
+<!--												Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.-->
+<!--											</small>-->
+<!--                           		       <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-danger"></span>-->
+<!--                            </div>-->
+<!--                            <div class="input-group">-->
+<!--                           		<div class="input-group-prepend">-->
+<!--                           				<span class="input-group-text">ConfirmPassword</span>-->
+<!--                           		  </div>-->
+<!--                           		     <input type="text" th:field="*{password}" class="form-control" id="password" placeholder="Password">-->
+<!--                           		       <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-danger"></span>-->
+<!--                            </div>-->
+                         
+						    <div class="col-md-6">
+   	 		     	 	          <input type="submit" class="btn btn-primary" value="Add customer">
+   	 		     	 	   
+   	 		     	      </div>
+   	 		        </div> 
+   	 		     	<p id="demo" class="text-success"></p> 
+   	 		     	 </form>
+   	 		  </div>
+   	 	 </div> 
+   	 		  
+    </div>
+   	 		
+   	 		 <div class="col-md-2"></div>
+   	 	</div>
+   	
+   	
+    
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
