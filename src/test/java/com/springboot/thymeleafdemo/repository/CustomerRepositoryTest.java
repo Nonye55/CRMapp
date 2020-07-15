@@ -25,11 +25,14 @@ class CustomerRepositoryTest {
     @BeforeEach
     void setUp() {
 
-        customer = new Customer();
+//        customer = new Customer
         customer.setFirstName("john");
         customer.setLastName("Doe");
         customer.setEmail("doe@gmail.com");
         customer.setPhoneNumber(903830456898l);
+        customer.getPassword();
+        customer.getPassword();
+        customer.getSalt();
     }
 
     @Test
