@@ -10,48 +10,52 @@ import javax.persistence.Id;
 
 @Entity
 public class Customer {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 
 	@Column(name = "first_name")
 	private String firstName;
-	
-	@Column(name ="last_name")
+
+	@Column(name = "last_name")
 	private String lastName;
-	
-	@Column(name = "phoneNumber")
-	private long phoneNumber;
-	
-	@Column(name ="email")
+
+	@Column(name = "phone_number")
+	private String phoneNumber;
+
+	@Column(name = "email")
 	private String email;
 
-	@Column(name ="user_name")
-	private String user_name;
+	@Column(name = "username")
+	private String userName;
 
 	@Column(name = "password")
 	private String password;
 
-	@Column (name ="salt")
+	@Column(name = "salt")
 	private String salt;
 
-	public Customer(Integer id, String firstName, String lastName, Long phoneNumber, String email, String user_name, String password, String salt) {
+
+	public Customer() {
+	}
+
+	public Customer(Long id, String firstName, String lastName, String phoneNumber, String email, String userName, String password, String salt) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
-		this.user_name = user_name;
+		this.userName = userName;
 		this.password = password;
 		this.salt = salt;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -71,11 +75,11 @@ public class Customer {
 		this.lastName = lastName;
 	}
 
-	public long getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(long phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -87,12 +91,12 @@ public class Customer {
 		this.email = email;
 	}
 
-	public String getUser_name() {
-		return user_name;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUser_name(String user_name) {
-		this.user_name = user_name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {
@@ -114,14 +118,14 @@ public class Customer {
 	@Override
 	public String toString() {
 		return "Customer{" +
-				"id=" + getId() +
-				", firstName='" + getFirstName() + '\'' +
-				", lastName='" + getLastName() + '\'' +
-				", phoneNumber=" + getPhoneNumber() +
-				", email='" + getEmail() + '\'' +
-				", user_name='" + getUser_name() + '\'' +
-				", password='" + getPassword() + '\'' +
-				", salt='" + getSalt() + '\'' +
+				"id=" + id +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", phoneNumber='" + phoneNumber + '\'' +
+				", email='" + email + '\'' +
+				", userName='" + userName + '\'' +
+				", password='" + password + '\'' +
+				", salt='" + salt + '\'' +
 				'}';
 	}
 }

@@ -66,7 +66,7 @@ public class CustomerController {
 	@PostMapping("update/{id}")
 	public String UpdateCustomer(@PathVariable("id") long id,@Validated Customer customer,BindingResult result, Model model) {
 		if(result.hasErrors()) {
-			customer.setId((int) id);
+			customer.setId(id);
 			System.out.println("Errors");
 				return "update-customer";
 		}

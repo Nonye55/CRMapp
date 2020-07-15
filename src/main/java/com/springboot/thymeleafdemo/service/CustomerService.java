@@ -19,7 +19,7 @@ public class CustomerService {
         this.hashService = hashService;
     }
 
-    public  boolean iscustomernameAvailable (String username)
+    public  boolean isUsernameAvailable (String username)
     {
         return customerMapper.getCustomer(username) == null;
     }
@@ -30,9 +30,11 @@ public class CustomerService {
 
         String encodedSalt = Base64.getEncoder().encodeToString(salt);
         String hashedPassword = hashService.getHashedValue(customer.getPassword(), encodedSalt);
-        return customerMapper.insert(new Customer(null,customer.getFirstName(),customer.getLastName(),customer.getPhoneNumber(),customer.getEmail(),customer.getUser_name(),hashedPassword,encodedSalt));
+        return customerMapper.insert(new Customer(null,customer.getFirstName(),customer.getLastName(),customer.getPhoneNumber(),customer.getEmail(),customer.getUserName(),hashedPassword,encodedSalt));
 
     }
+
+
 }
 
 

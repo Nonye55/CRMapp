@@ -18,16 +18,18 @@ public class HomeController {
     }
 
     @GetMapping()
-    public String getHomepage(MessageForm messageForm, Model model){
-        model.addAttribute("greetings",this.messageListService.getMessages());
+    public String getHomepage(MessageForm messageForm, Model model) {
+        model.addAttribute("greetings", this.messageListService.getMessages());
         return "home";
     }
 
     @PostMapping
-    public String addMessage(MessageForm messageForm,Model model){
+    public String addMessage(MessageForm messageForm, Model model) {
         messageListService.addMessages(messageForm.getText());
-        model.addAttribute("greetings",messageListService.getMessages());
+        model.addAttribute("greetings", messageListService.getMessages());
+        messageForm.setText("");
         return "home";
-    }
 
+
+    }
 }

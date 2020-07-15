@@ -8,7 +8,7 @@ public class MessageForm {
         return text;
 
     }
-    private void setText(String Text){
+    public void setText(String Text){
         this.text = text;
     }
 

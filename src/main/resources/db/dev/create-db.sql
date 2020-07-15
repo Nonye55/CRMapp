@@ -10,13 +10,13 @@ DROP TABLE IF EXISTS `customer`;
 
 CREATE TABLE `customer` (
 
-  `id` long(11) NOT NULL AUTO_INCREMENT,
+  `id` INTEGER (11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(45) DEFAULT NULL,
   `last_name` varchar(45) DEFAULT NULL,
-  `phone_Number`varchar(45) DEFAULT NULL, 
+  `phone_number`varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
-  `user_name`varchar(45)DEFAULT NULL,
-  `pass_word` varchar(45)DEFAULT NULL,
+  `username`varchar(45)DEFAULT NULL,
+  `password` varchar(45)DEFAULT NULL,
   `salt` varchar(20)DEFAULT NULL
 
  
